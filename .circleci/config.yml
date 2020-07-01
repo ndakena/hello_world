@@ -55,5 +55,5 @@ workflows:
       - build
       - save_hello_world_output
       - print_output_file:
-         requires:
+          requires:
             - save_hello_world_output
