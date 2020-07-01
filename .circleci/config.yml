@@ -25,6 +25,16 @@ jobs:
           name: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>
           command: |
             echo $MY_ENV_VAR
+  save_hello_world_output: 
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: echo "hello world" > output.txt
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - target/output.txt
+            - build/*
 workflows:
   # Name the workflow "welcome"
   welcome:
