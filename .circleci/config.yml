@@ -32,9 +32,9 @@ jobs:
       - checkout
       - run: echo "hello world" > ~/output.txt
       - persist_to_workspace:
-          root: ~/output.txt
+          root: ~/
           paths:
-            - ~/output.txt
+            - output.txt
   print_output_file:
     docker:
       - image: circleci/node:13.8.0
