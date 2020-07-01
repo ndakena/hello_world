@@ -31,10 +31,9 @@ jobs:
     steps:
       - run: echo "hello world" > output.txt
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: */
           paths:
-            - target/output.txt
-            - build/*
+            - */output.txt
 workflows:
   # Name the workflow "welcome"
   welcome:
