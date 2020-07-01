@@ -30,9 +30,9 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: echo "hello world" > output.txt
+      - run: echo "hello world" > ~/output.txt
       - persist_to_workspace:
-          root: ~
+          root: ~/
           paths:
             - output.txt
 workflows:
