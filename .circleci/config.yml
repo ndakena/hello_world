@@ -46,3 +46,4 @@ workflows:
           requires:
             - print_hello
       - build
+      - save_hello_world_output
