@@ -35,6 +35,13 @@ jobs:
           root: ~/
           paths:
             - output.txt
+  print_output_file:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: cat ~/output.txt
 workflows:
   # Name the workflow "welcome"
   welcome:
@@ -47,3 +54,4 @@ workflows:
             - print_hello
       - build
       - save_hello_world_output
+      - print_output_file
