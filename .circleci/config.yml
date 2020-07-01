@@ -22,7 +22,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "echo an env var that is part of our project"
+          name: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>
           command: |
             echo $MY_ENV_VAR
 workflows:
