@@ -32,7 +32,7 @@ jobs:
       - run: echo "hello world" > output.txt
       - persist_to_workspace:
           paths:
-            - */output.txt
+            - output.txt
 workflows:
   # Name the workflow "welcome"
   welcome:
